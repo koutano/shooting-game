@@ -1,15 +1,15 @@
 #pragma once
-#include"ObjBase.h"
+#include"../RectObjBase.h"
 
-class EnemyBase :public ObjBase
+class EnemyBase :public RectObjBase
 {
 public:
-	EnemyBase(Vector2 pos_):
-		ObjBase(pos_)
+	EnemyBase(float posX_,float posY_,float width_,float height_,std::string keyword_) :
+		RectObjBase(posX_,posY_,width_,height_,keyword_,Group_Enemy)
 	{
-
 	}
 	
+
 protected:
 
 

@@ -6,12 +6,12 @@ class Player :public RectObjBase
 {
 public:
 	Player(float posX_,float posY_) :
-		RectObjBase(posX_,posY_, 99, 99, "Player",Group_Player)
+		RectObjBase(posX_,posY_, 200, 200, "Player",Group_Player)
 	{
 
 	}
 
-	~Player() override { delete col; }
+	~Player() override { delete colType; }
 	
 
 	void Update()override;

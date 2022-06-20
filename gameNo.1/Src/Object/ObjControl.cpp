@@ -29,45 +29,53 @@ void ObjControl::Draw()
 		obj->Draw();
 	}
 }
-void ObjControl::CollisionUpdate() 
+void ObjControl::CollisionUpdate()
 {
-	/*for (auto itr = objects.begin(), itr_end = objects.end(); itr != objects.end();)
-	{
-		for (auto itr2 = objects.begin(), itr_end = objects.end(); itr2 != objects.end();)
-		{
-			if (collision.Judge(*(*itr)->GetCollider(), *(*itr2)->GetCollider()))
-			{
-				if (itr == itr2)
-				{
-					return;
-				}
-				if (!(*itr)->GetUsingFlag() || !(*itr2)->GetUsingFlag())
-				{
-					return;
-				}
-				(*itr)->OnCollision(*itr2);
-			}
-		}
-	}*/
+	//for (auto itr1 = objects.begin(), itr_end = objects.end(); itr1 != objects.end();)
+	//{
+	//	for (auto itr2 = objects.begin(), itr_end = objects.end(); itr2 != objects.end();)
+	//	{
+	//		if (collision.Judge(*(*itr1)->GetCollider(), *(*itr2)->GetCollider()))
+	//		{
+	//			if (itr1 != itr2 && (*itr1)->GetUsingFlag() && (*itr2)->GetUsingFlag())
+	//			{
+	//				(*itr1)->OnCollision((*itr2));
+	//			}
+	//			/*if (itr1 == itr2)
+	//			{
+	//				return;
+	//			}
+	//			if (!(*itr1)->GetUsingFlag() || !(*itr2)->GetUsingFlag())
+	//			{
+	//				return;
+	//			}
+	//			(*itr1)->OnCollision(*itr2);*/
+	//		}
+	//	}
+	//}
 
 	for (auto* obj1 : objects)
 	{
 		for (auto* obj2 : objects)
 		{
-			if (collision.Judge(*obj1->GetCollider(), *obj2->GetCollider()))
+			if (obj1 != obj2 && obj1->GetUsingFlag() && obj2->GetUsingFlag())
 			{
-				if (obj1 != obj2 && obj1->GetUsingFlag() && obj2->GetUsingFlag())
+
+				if (collision.Judge(*obj1->GetCollider(), *obj2->GetCollider()))
 				{
+
 					obj1->OnCollision(obj2);
+
+					/*if (obj1 == obj2)
+					{
+						break;
+					}
+					if (!obj1->GetUsingFlag() || !obj2->GetUsingFlag())
+					{
+						return;
+					}*/
+
 				}
-				/*if (obj1 == obj2)
-				{
-					return;
-				}
-				if (!obj1->GetUsingFlag() || !obj2->GetUsingFlag())
-				{
-					return;
-				}*/
 			}
 		}
 	}

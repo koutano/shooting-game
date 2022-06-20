@@ -7,7 +7,7 @@ public:
 		RectObjBase(posX_,posY_,100,50,"Bullet")
 	{
 	}
-	~Bullet()override { delete col; }
+	~Bullet()override { delete colType; }
 	void Update()override;
 	void Draw()override;
 	void OnCollision(ObjBase* obj_)override;

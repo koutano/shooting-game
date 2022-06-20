@@ -12,7 +12,6 @@ void BackGround::Draw()
 	if (usingFlag)
 	{
 		DrawExtendGraph(posX, posY, 640, 480, TextureManager::Instance()->GetHandle(textureKeyword), true);
-
 	}
 }
 

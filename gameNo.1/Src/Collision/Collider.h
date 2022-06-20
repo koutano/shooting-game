@@ -3,6 +3,7 @@
 //“–‚½‚è”»’è‚ÌŒ`ó
 enum ColliderType
 {
+	Collider_Non=-1,
 	Collider_Circle,
 	Collider_Rect,
 
@@ -16,7 +17,6 @@ public:
 	Collider() {};
 
 	virtual ~Collider() {};
-
 	virtual ColliderType GetType()const = 0;
 };
 

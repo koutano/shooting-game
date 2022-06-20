@@ -1,16 +1,15 @@
 #pragma once
-#include"../RectObjBase.h"
-
-class Enemy :public RectObjBase
+#include"EnemyBase.h"
+class Enemy :public EnemyBase
 {
 public:
 	Enemy(float posX_,float posY_,float speed_):
-		RectObjBase(posX_,posY_,200,200,"Enemy",Group_Enemy),
+		EnemyBase(posX_,posY_,200,200,"Enemy"),
 		speed(speed_)
 	{
 
 	}
-	~Enemy()override { delete col; }
+	~Enemy()override { delete colType; }
 	void Update()override;
 	void Draw()override;
 	void OnCollision(ObjBase* obj_)override;
