@@ -3,10 +3,10 @@
 #include<string>
 #include"TextureManager.h"
 #include"KeyboardController.h"
-
-#include"Player.h"
-#include"Enemy.h"
-#include"BackGround.h"
+#include"Object/ObjControl.h"
+#include"Object/Player/Player.h"
+#include"Object/Enemy/Enemy.h"
+#include"Object/BackGround.h"
 
 // ƒvƒƒOƒ‰ƒ€‚Í WinMain ‚©‚çŽn‚Ü‚è‚Ü‚·
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
@@ -36,9 +36,9 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	}
 
 
-	Player player(Vector2(0,0));
-	Enemy enemy(Vector2(640, 240));
-	BackGround bg(Vector2(0,0));
+	ObjControl::Instance()->CreateBackGround();
+	ObjControl::Instance()->CreatePlayer(0, 0);
+	ObjControl::Instance()->CreateEnemy(640, 240);
 
 	while (ProcessMessage() == 0 && CheckHitKey(KEY_INPUT_ESCAPE) == 0)
 	{
@@ -46,17 +46,16 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		ClearDrawScreen();
 
 		KeyboardController::Instance()->Update();
+		if (KeyboardController::Instance()->IsPushed(KEY_INPUT_O))
+		{
+		}
+		ObjControl::Instance()->Update();
+		ObjControl::Instance()->Draw();
 
-		player.Update();
-		enemy.Update();
-		bg.Update();
-
-		bg.Draw();
-		player.Draw();
-		enemy.Draw();
+		ObjControl::Instance()->CollisionUpdate();
 
 		ScreenFlip();
-
+		 
 	}
 
 	TextureManager::Instance()->AllDelete();

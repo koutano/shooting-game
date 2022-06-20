@@ -300,10 +300,10 @@ float Norm(Vector2 vec);
 //ベクトルの長さを返す関数(Vector3用)
 float Norm(Vector3 vec);
 
-//座標の長さを求める関数(Vector2用)
+//二点間の座標の長さを求める関数(Vector2用)
 float Length(Vector2 pos1, Vector2 pos2);
 
-//座標の長さを求める関数(Vector3用)
+//二点間の座標の長さを求める関数(Vector3用)
 float Length(Vector3 pos1, Vector3 pos2);
 
 //単位ベクトルを求める関数(Vector2用)

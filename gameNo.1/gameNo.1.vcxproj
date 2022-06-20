@@ -19,29 +19,35 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Src\BackGround.h" />
-    <ClInclude Include="Src\Bullet.h" />
-    <ClInclude Include="Src\Collision.h" />
-    <ClInclude Include="Src\Enemy.h" />
-    <ClInclude Include="Src\EnemyBase.h" />
-    <ClInclude Include="Src\GameProcessing.h" />
-    <ClInclude Include="Src\KeyboardController.h" />
-    <ClInclude Include="Src\Mathematics.h" />
-    <ClInclude Include="Src\ObjBase.h" />
-    <ClInclude Include="Src\Player.h" />
-    <ClInclude Include="Src\SceneControl.h" />
-    <ClInclude Include="Src\Collider.h" />
-    <ClInclude Include="Src\TextureManager.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="Src\BackGround.cpp" />
-    <ClCompile Include="Src\Bullet.cpp" />
-    <ClCompile Include="Src\Enemy.cpp" />
     <ClCompile Include="Src\KeyboardController.cpp" />
     <ClCompile Include="Src\Main.cpp" />
     <ClCompile Include="Src\Mathematics.cpp" />
-    <ClCompile Include="Src\Player.cpp" />
+    <ClCompile Include="Src\Object\BackGround.cpp" />
+    <ClCompile Include="Src\Object\Enemy.cpp" />
+    <ClCompile Include="Src\Object\ObjControl.cpp" />
+    <ClCompile Include="Src\Object\Player\Bullet.cpp" />
+    <ClCompile Include="Src\Object\Player\Player.cpp" />
     <ClCompile Include="Src\TextureManager.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Src\Collision\CircleCollider.h" />
+    <ClInclude Include="Src\Collision\Collider.h" />
+    <ClInclude Include="Src\Collision\Collision.h" />
+    <ClInclude Include="Src\Collision\FlexibleCollision.h" />
+    <ClInclude Include="Src\Collision\RectCollider.h" />
+    <ClInclude Include="Src\GameProcessing.h" />
+    <ClInclude Include="Src\KeyboardController.h" />
+    <ClInclude Include="Src\Mathematics.h" />
+    <ClInclude Include="Src\Object\BackGround.h" />
+    <ClInclude Include="Src\Object\Enemy\Enemy.h" />
+    <ClInclude Include="Src\Object\Enemy\EnemyBase.h" />
+    <ClInclude Include="Src\Object\ObjBase.h" />
+    <ClInclude Include="Src\Object\ObjControl.h" />
+    <ClInclude Include="Src\Object\Player\Bullet.h" />
+    <ClInclude Include="Src\Object\Player\Player.h" />
+    <ClInclude Include="Src\Object\RectObjBase.h" />
+    <ClInclude Include="Src\SceneControl.h" />
+    <ClInclude Include="Src\TextureManager.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
@@ -113,13 +119,13 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\DxLib_VC\プロジェクトに追加すべきファイル_VC用;C:\VSOriginLib\Origin;C:\Users\田上　皓基\OneDrive\デスクトップ\ゲーム作ってみた\library作ってみた\StaticMath;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\DxLib_VC\プロジェクトに追加すべきファイル_VC用;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\DxLib_VC\プロジェクトに追加すべきファイル_VC用;C:\VSOriginLib\Origin;C:\Users\田上　皓基\OneDrive\デスクトップ\ゲーム作ってみた\library作ってみた\StaticMath;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\DxLib_VC\プロジェクトに追加すべきファイル_VC用;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -130,7 +136,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\DxLib_VC\プロジェクトに追加すべきファイル_VC用;C:\VSOriginLib\Origin;C:\Users\田上　皓基\OneDrive\デスクトップ\ゲーム作ってみた\library作ってみた\StaticMath;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\DxLib_VC\プロジェクトに追加すべきファイル_VC用;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
     </ClCompile>
     <Link>
@@ -138,7 +144,7 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\DxLib_VC\プロジェクトに追加すべきファイル_VC用;C:\VSOriginLib\Origin;C:\Users\田上　皓基\OneDrive\デスクトップ\ゲーム作ってみた\library作ってみた\StaticMath;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\DxLib_VC\プロジェクトに追加すべきファイル_VC用;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -147,13 +153,13 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\DxLib_VC\プロジェクトに追加すべきファイル_VC用;C:\VSOriginLib\Origin;C:\Users\田上　皓基\OneDrive\デスクトップ\ゲーム作ってみた\library作ってみた\StaticMath;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\DxLib_VC\プロジェクトに追加すべきファイル_VC用;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\DxLib_VC\プロジェクトに追加すべきファイル_VC用;C:\VSOriginLib\Origin;C:\Users\田上　皓基\OneDrive\デスクトップ\ゲーム作ってみた\library作ってみた\StaticMath;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\DxLib_VC\プロジェクトに追加すべきファイル_VC用;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -164,7 +170,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\DxLib_VC\プロジェクトに追加すべきファイル_VC用;C:\VSOriginLib\Origin;C:\Users\田上　皓基\OneDrive\デスクトップ\ゲーム作ってみた\library作ってみた\StaticMath;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\DxLib_VC\プロジェクトに追加すべきファイル_VC用;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
     </ClCompile>
     <Link>
@@ -172,7 +178,7 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\DxLib_VC\プロジェクトに追加すべきファイル_VC用;C:\VSOriginLib\Origin;C:\Users\田上　皓基\OneDrive\デスクトップ\ゲーム作ってみた\library作ってみた\StaticMath;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\DxLib_VC\プロジェクトに追加すべきファイル_VC用;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
