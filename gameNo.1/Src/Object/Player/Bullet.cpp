@@ -10,6 +10,7 @@ void Bullet::Update()
 		usingFlag = false;
 	}
 	posX++;
+	colType->UpdatePos(posX, posY);
 }
 
 void Bullet::Draw()

@@ -5,9 +5,11 @@
 #include"Enemy/Enemy.h"
 void ObjControl::Update()
 {	
-	for (auto* obj : objects)
+	//for (auto* obj : objects)
+	//for (auto itr = objects.begin(), itr_end = objects.end(); itr != itr_end;++itr)
+	for (int i = 0; i < objects.size(); ++i)
 	{
-		obj->Update();
+		objects[i]->Update();
 	}
 	for (auto itr = objects.begin(), itr_end = objects.end(); itr != objects.end();)
 	{
@@ -24,10 +26,17 @@ void ObjControl::Update()
 }
 void ObjControl::Draw()
 {
-	for (auto* obj : objects)
+	//for (auto* obj : objects)
+	////for (auto itr = objects.begin(), itr_end = objects.end(); itr != itr_end; ++itr)
+
+	//{
+	//	obj->Draw();
+	//}
+	for (int i = 0; i < objects.size(); ++i)
 	{
-		obj->Draw();
+		objects[i]->Draw();
 	}
+
 }
 void ObjControl::CollisionUpdate()
 {
@@ -58,25 +67,30 @@ void ObjControl::CollisionUpdate()
 	{
 		for (auto* obj2 : objects)
 		{
-			if (obj1 != obj2 && obj1->GetUsingFlag() && obj2->GetUsingFlag())
+			/*
+				usingflag‚Ì—L–³‚ð‚«‚¢‚Ä‚µ‚Ü‚¤‚Æobjects“à‚Ì‚ ‚Æ‚Ì‚à‚Ì‚ª“–‚½‚Á‚½Žž‚Ìˆ—‚ðs‚í‚È‚­‚È‚é
+			*/
+			//if (obj1 != obj2 && obj1->GetUsingFlag() && obj2->GetUsingFlag())
+			if (obj1 == obj2)
+			{
+				continue;
+			}
+			if (collision.Judge(*obj1->GetCollider(), *obj2->GetCollider()))
 			{
 
-				if (collision.Judge(*obj1->GetCollider(), *obj2->GetCollider()))
+				obj1->OnCollision(obj2);
+
+				/*if (obj1 == obj2)
 				{
-
-					obj1->OnCollision(obj2);
-
-					/*if (obj1 == obj2)
-					{
-						break;
-					}
-					if (!obj1->GetUsingFlag() || !obj2->GetUsingFlag())
-					{
-						return;
-					}*/
-
+					break;
 				}
+				if (!obj1->GetUsingFlag() || !obj2->GetUsingFlag())
+				{
+					return;
+				}*/
+
 			}
+			
 		}
 	}
 }
@@ -94,5 +108,5 @@ void ObjControl::CreateBullet(float posX_,float posY_)
 }
 void ObjControl::CreateEnemy(float posX_, float posY_)
 {
-	objects.push_back(new Enemy(posX_, posY_, 1));
+	objects.push_back(new Enemy(posX_, posY_, 5));
 }

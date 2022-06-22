@@ -31,8 +31,8 @@ void Player::Update()
 	{
 		ObjControl::Instance()->CreateBullet(posX, posY);
 	} 
-	const RectCollider &r1 = static_cast<const RectCollider>(colType);
-	r1.
+	
+	colType->UpdatePos(posX, posY);
 
 }
 

@@ -5,8 +5,7 @@ class CircleCollider :public Collider
 {
 public:
 	CircleCollider(float x_, float y_, float radius_) :
-		x(x_),
-		y(y_),
+		Collider(x_, y_),
 		radius(radius_)
 	{
 	}
@@ -20,8 +19,6 @@ public:
 	float GetRadius()const { return radius; }
 
 private:
-	float x;
-	float y;
 	float radius;
 
 };

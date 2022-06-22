@@ -38,7 +38,6 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 	ObjControl::Instance()->CreateBackGround();
 	ObjControl::Instance()->CreatePlayer(0, 0);
-	ObjControl::Instance()->CreateEnemy(640, 240);
 
 	while (ProcessMessage() == 0 && CheckHitKey(KEY_INPUT_ESCAPE) == 0)
 	{
@@ -48,6 +47,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 		KeyboardController::Instance()->Update();
 		if (KeyboardController::Instance()->IsPushed(KEY_INPUT_O))
 		{
+			ObjControl::Instance()->CreateEnemy(640, 240);
 		}
 		ObjControl::Instance()->Update();
 		ObjControl::Instance()->Draw();

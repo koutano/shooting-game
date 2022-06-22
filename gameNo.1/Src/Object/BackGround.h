@@ -5,7 +5,7 @@ class BackGround :public ObjBase
 {
 public:
 	BackGround(float posX_, float posY_) :
-		ObjBase(posX_, posY_, 640, 480, "BackGround")
+		ObjBase(posX_, posY_, "BackGround")
 	{
 
 	}

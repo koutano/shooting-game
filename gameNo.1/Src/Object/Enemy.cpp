@@ -9,6 +9,7 @@ void Enemy::Update()
 		usingFlag = false;
 	}
 	posX -= speed;
+	colType->UpdatePos(posX, posY);
 }
 
 void Enemy::Draw()

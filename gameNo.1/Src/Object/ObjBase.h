@@ -9,18 +9,19 @@ enum ObjGroup
 
 	Group_Num
 };
-
+/*
+	ObjBaseにwidthとheightをつけるのはよくない
+	（CircleObjBaseに移行したときに不要になる）
+*/
 //オブジェクト基底クラス
 class ObjBase
 {
 public:
 	//コンストラクタ
 	//引数　float型座標 X,Y
-	ObjBase(float posX_, float posY_, float width_, float height_) :
+	ObjBase(float posX_, float posY_) :
 		posX(posX_),
 		posY(posY_),
-		width(width_),
-		height(height_),
 		usingFlag(true),
 		textureKeyword(""),
 		group(Group_Non)
@@ -31,11 +32,9 @@ public:
 	//コンストラクタ
 	//第1引数  float型座標
 	//第2引数　オブジェクトの名前
-	ObjBase(float posX_, float posY_, float width_, float height_, std::string keyword_) :
+	ObjBase(float posX_, float posY_, std::string keyword_) :
 		posX(posX_),
 		posY(posY_),
-		width(width_),
-		height(height_),
 		usingFlag(true),
 		textureKeyword(keyword_),
 		group(Group_Non)
@@ -43,11 +42,9 @@ public:
 	{
 	}
 
-	ObjBase(float posX_, float posY_, float width_, float height_, ObjGroup group_) :
+	ObjBase(float posX_, float posY_, ObjGroup group_) :
 		posX(posX_),
 		posY(posY_),
-		width(width_),
-		height(height_),
 		usingFlag(true),
 		textureKeyword(""),
 		group(group_)
@@ -55,11 +52,9 @@ public:
 	{
 	}
 
-	ObjBase(float posX_, float posY_, float width_, float height_, std::string keyword_, ObjGroup group_) :
+	ObjBase(float posX_, float posY_, std::string keyword_, ObjGroup group_) :
 		posX(posX_),
 		posY(posY_),
-		width(width_),
-		height(height_),
 		usingFlag(true),
 		textureKeyword(keyword_),
 		group(group_)
@@ -75,8 +70,6 @@ public:
 
 	float GetPosX() { return posX; }
 	float GetPosY() { return posY; }
-	float GetWidth() { return width; }
-	float GetHeight() { return height; }
 
 	//usingFlags取得用
 	bool GetUsingFlag() { return usingFlag; }
@@ -92,8 +85,6 @@ public:
 protected:
 	float posX;
 	float posY;
-	float width;
-	float height;
 	bool usingFlag;		//使えるかどうか
 	//オブジェクトの名前
 	std::string textureKeyword;
