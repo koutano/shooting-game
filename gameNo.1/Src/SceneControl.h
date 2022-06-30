@@ -1,5 +1,13 @@
 #pragma once
 
+enum SceneKind
+{
+	Scene_Title,
+	Scene_Game,
+	Scene_Finish,
+	
+	Scene_Num
+};
 class SceneControl
 {
 public:
@@ -14,9 +22,7 @@ public:
 		SceneControl(Instance);
 	}
 
-
-	void GameProcessing();
-	void DrawProcessing();
+	
 
 private: 
 	//

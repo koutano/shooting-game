@@ -17,6 +17,12 @@
     <Filter Include="ソース ファイル\Collision">
       <UniqueIdentifier>{51ecb274-6749-49ee-b4ed-23e6cb210709}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Object\Enemy\Enemy01">
+      <UniqueIdentifier>{2292baee-6dfb-4b31-8488-e09e48eed752}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Scene">
+      <UniqueIdentifier>{fcad1c81-74b4-4a9a-b516-9f34d46c05f5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Src\KeyboardController.cpp">
@@ -40,24 +46,21 @@
     <ClCompile Include="Src\Object\Player\Player.cpp">
       <Filter>ソース ファイル\Object\Player</Filter>
     </ClCompile>
-    <ClCompile Include="Src\Object\Enemy.cpp">
-      <Filter>ソース ファイル\Object\Enemy</Filter>
-    </ClCompile>
     <ClCompile Include="Src\Object\ObjControl.cpp">
       <Filter>ソース ファイル\Object</Filter>
     </ClCompile>
+    <ClCompile Include="Src\Object\Enemy.cpp">
+      <Filter>ソース ファイル\Object\Enemy\Enemy01</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Scene\BaseScene.cpp">
+      <Filter>ソース ファイル\Scene</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Src\GameProcessing.h">
-      <Filter>ソース ファイル</Filter>
-    </ClInclude>
     <ClInclude Include="Src\KeyboardController.h">
       <Filter>ソース ファイル</Filter>
     </ClInclude>
     <ClInclude Include="Src\Mathematics.h">
-      <Filter>ソース ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\SceneControl.h">
       <Filter>ソース ファイル</Filter>
     </ClInclude>
     <ClInclude Include="Src\TextureManager.h">
@@ -71,9 +74,6 @@
     </ClInclude>
     <ClInclude Include="Src\Object\Player\Player.h">
       <Filter>ソース ファイル\Object\Player</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Object\Enemy\Enemy.h">
-      <Filter>ソース ファイル\Object\Enemy</Filter>
     </ClInclude>
     <ClInclude Include="Src\Object\Enemy\EnemyBase.h">
       <Filter>ソース ファイル\Object\Enemy</Filter>
@@ -101,6 +101,15 @@
     </ClInclude>
     <ClInclude Include="Src\Object\RectObjBase.h">
       <Filter>ソース ファイル\Object</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Object\Enemy\Enemy.h">
+      <Filter>ソース ファイル\Object\Enemy\Enemy01</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Scene\GameProcessing.h">
+      <Filter>ソース ファイル\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Scene\SceneControl.h">
+      <Filter>ソース ファイル\Scene</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
