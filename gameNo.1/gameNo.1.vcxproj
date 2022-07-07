@@ -46,7 +46,6 @@
     <ClInclude Include="Src\Object\Player\Bullet.h" />
     <ClInclude Include="Src\Object\Player\Player.h" />
     <ClInclude Include="Src\Object\RectObjBase.h" />
-    <ClInclude Include="Src\Scene\GameProcessing.h" />
     <ClInclude Include="Src\Scene\SceneControl.h" />
     <ClInclude Include="Src\TextureManager.h" />
   </ItemGroup>
