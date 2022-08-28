@@ -22,7 +22,7 @@ void Enemy::Draw()
 
 void Enemy::OnCollision(ObjBase* obj_)
 {
-	if (obj_->GetObjGroup() == Group_Player)
+	if (obj_->GetObjGroup() == ObjGroup::Group_Player)
 	{
 		usingFlag = false;
 	}

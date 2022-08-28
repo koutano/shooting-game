@@ -7,7 +7,7 @@
 #include"Object/Player/Player.h"
 #include"Object/Enemy/Enemy.h"
 #include"Object/BackGround.h"
-
+#include"Scene/SceneControl.h"
 // ƒvƒƒOƒ‰ƒ€‚Í WinMain ‚©‚çŽn‚Ü‚è‚Ü‚·
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
 {
@@ -34,26 +34,24 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 			return 0;
 		}
 	}
-
-
-	ObjControl::Instance()->CreateBackGround();
-	ObjControl::Instance()->CreatePlayer(0, 0);
-
+	/*ObjControl::Instance()->CreateBackGround();
+	ObjControl::Instance()->CreatePlayer(0, 0);*/
 	while (ProcessMessage() == 0 && CheckHitKey(KEY_INPUT_ESCAPE) == 0)
 	{
 
 		ClearDrawScreen();
 
 		KeyboardController::Instance()->Update();
-		if (KeyboardController::Instance()->IsPushed(KEY_INPUT_O))
+		/*if (KeyboardController::Instance()->IsPushed(KEY_INPUT_O))
 		{
 			ObjControl::Instance()->CreateEnemy(640, 240);
 		}
 		ObjControl::Instance()->Update();
 		ObjControl::Instance()->Draw();
 
-		ObjControl::Instance()->CollisionUpdate();
-
+		ObjControl::Instance()->CollisionUpdate();*/
+		SceneControl::Instance()->GameProcessing();
+		SceneControl::Instance()->DrawProcessing();
 		ScreenFlip();
 		 
 	}

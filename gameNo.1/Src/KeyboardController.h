@@ -1,9 +1,8 @@
-#ifndef KEYBOARD_CONTROLLER_H_
-#define KEYBOARD_CONTROLLER_H_
-
+#pragma once
 class KeyboardController
 {
 public:
+	//キー情報取得用
 	struct KeyState
 	{
 		// キー情報 => 押された or 押されていない
@@ -12,7 +11,7 @@ public:
 	};
 
 	static const int MaxKey = 256;
-
+	//シングルトン
 	static KeyboardController* Instance()
 	{
 		static KeyboardController instance;
@@ -20,20 +19,24 @@ public:
 	}
 
 public:
+	//キー情報更新用
 	void Update();
+	//キーを押した瞬間かどうか
 	bool IsPushed(int key);
+	//キーを押しているかどうか
 	bool IsHeld(int key);
+	//キーを話した瞬間かどうか
 	bool IsReleased(int key);
 
 private:
+	//コンストラクタ
 	KeyboardController() 
 	{
 		memset(KeyStates, false, sizeof(KeyState) * MaxKey);
 	}
-
+	//消去用
 	KeyboardController(KeyboardController& instance) = delete;
 private:
+	//キーの状態保存用
 	KeyState KeyStates[MaxKey];
 };
-
-#endif

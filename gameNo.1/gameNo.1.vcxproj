@@ -27,7 +27,9 @@
     <ClCompile Include="Src\Object\ObjControl.cpp" />
     <ClCompile Include="Src\Object\Player\Bullet.cpp" />
     <ClCompile Include="Src\Object\Player\Player.cpp" />
-    <ClCompile Include="Src\Scene\BaseScene.cpp" />
+    <ClCompile Include="Src\Scene\SceneControl.cpp" />
+    <ClCompile Include="Src\Scene\SceneGame.cpp" />
+    <ClCompile Include="Src\Scene\SceneTitle.cpp" />
     <ClCompile Include="Src\TextureManager.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -46,7 +48,10 @@
     <ClInclude Include="Src\Object\Player\Bullet.h" />
     <ClInclude Include="Src\Object\Player\Player.h" />
     <ClInclude Include="Src\Object\RectObjBase.h" />
+    <ClInclude Include="Src\Scene\BaseScene.h" />
     <ClInclude Include="Src\Scene\SceneControl.h" />
+    <ClInclude Include="Src\Scene\SceneGame.h" />
+    <ClInclude Include="Src\Scene\SceneTitle.h" />
     <ClInclude Include="Src\TextureManager.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

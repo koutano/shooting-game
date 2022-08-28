@@ -8,12 +8,16 @@
 //float x,yのメンバを持つ構造体
 struct Vector2
 {
+	//デフォルトコンストラクタ
 	Vector2() :
 		x(0),
 		y(0)
 	{
 	}
 
+	/*
+		初期値設定用コンストラクタ
+	*/
 	Vector2(float x_, float y_) :
 		x(x_),
 		y(y_)
@@ -82,67 +86,61 @@ struct Vector2
 	}
 
 
-	Vector2& operator + (float val)
+	Vector2 operator + (const float& val)const
 	{
-		this->x += val;
-		this->y += val;
-		return *this;
+		Vector2 returnVal{ this->x + val,this->y + val };
+		return returnVal;
 	}
 
-	Vector2& operator - (float val)
+	Vector2 operator - (const float& val)const
 	{
-
-		this->x -= val;
-		this->y -= val;
-		return *this;
+		Vector2 returnVal{ this->x - val,this->y - val };
+		return returnVal;
 	}
 
-	Vector2& operator * (float val)
+	Vector2 operator * (const float& val)const
 	{
-		this->x *= val;
-		this->y *= val;
-		return *this;
+		Vector2 returnVal{ this->x * val,this->y * val };
+		return returnVal;
 	}
 
-	Vector2& operator / (float val)
+	Vector2 operator / (const float& val)const
 	{
-		this->x /= val;
-		this->y /= val;
-		return *this;
+		Vector2 returnVal{ this->x / val,this->y / val };
+		return returnVal;
 	}
 
-	Vector2& operator + (Vector2 val)
+	Vector2 operator + (const Vector2& val)const
 	{
-		this->x += val.x;
-		this->y += val.y;
-		return *this;
+		Vector2 returnVal{ this->x + val.x,this->y + val.y };
+		return returnVal;
 	}
 
-	Vector2& operator - (Vector2 val)
+	Vector2 operator - (const Vector2& val)const
 	{
-		this->x -= val.x;
-		this->y -= val.y;
-		return *this;
+		Vector2 returnVal{ this->x - val.x,this->y - val.y };
+		return returnVal;
 	}
 
-	Vector2& operator * (Vector2 val)
+	Vector2 operator * (const Vector2& val)const
 	{
-		this->x *= val.x;
-		this->y *= val.y;
-		return *this;
+		Vector2 returnVal{ this->x * val.x,this->y * val.y };
+		return returnVal;
 	}
 
-	Vector2& operator / (Vector2 val)
+	Vector2 operator / (const Vector2& val)const
 	{
-		this->x /= val.x;
-		this->y /= val.y;
-		return *this;
+		Vector2 returnVal{ this->x / val.x,this->y / val.y };
+		return returnVal;
 	}
 };
 
 //float x,y,zのメンバを持つ構造体
 struct Vector3
 {
+	/*
+		デフォルトコンストラクタ
+	*/
 	Vector3() :
 		x(0),
 		y(0),
@@ -150,6 +148,9 @@ struct Vector3
 	{
 	}
 
+	/*
+		初期値設定用コンストラクタ
+	*/
 	Vector3(float x_, float y_, float z_) :
 		x(x_),
 		y(y_),
@@ -227,71 +228,53 @@ struct Vector3
 	}
 
 
-	Vector3& operator + (float val)
+	Vector3 operator + (const float& val)const
 	{
-		this->x += val;
-		this->y += val;
-		this->z += val;
-		return *this;
+		Vector3 returnVal{ this->x + val,this->y + val ,this->z + val };
+		return returnVal;
 	}
 
-	Vector3& operator - (float val)
+	Vector3 operator - (const float& val)const
 	{
-
-		this->x -= val;
-		this->y -= val;
-		this->z -= val;
-		return *this;
+		Vector3 returnVal{ this->x - val,this->y - val ,this->z - val };
+		return returnVal;
 	}
 
-	Vector3& operator * (float val)
+	Vector3 operator * (const float& val)const
 	{
-		this->x *= val;
-		this->y *= val;
-		this->z *= val;
-		return *this;
+		Vector3 returnVal{ this->x * val,this->y * val ,this->z * val };
+		return returnVal;
 	}
 
-	Vector3& operator / (float val)
+	Vector3 operator / (const float& val)const
 	{
-		this->x /= val;
-		this->y /= val;
-		this->z /= val;
-		return *this;
+		Vector3 returnVal{ this->x / val,this->y / val ,this->z / val };
+		return returnVal;
 	}
 
-	Vector3& operator + (Vector3 val)
+	Vector3 operator + (const Vector3& val)const
 	{
-		this->x += val.x;
-		this->y += val.y;
-		this->z += val.z;
-		return *this;
+		Vector3 returnVal{ this->x + val.x,this->y + val.y ,this->z + val.z };
+		return returnVal;
 	}
 
-	Vector3& operator - (Vector3 val)
+	Vector3 operator - (const Vector3& val)const
 	{
-		this->x -= val.x;
-		this->y -= val.y;
-		this->z -= val.z;
-		return *this;
+		Vector3 returnVal{ this->x - val.x,this->y - val.y ,this->z - val.z };
+		return returnVal;
 	}
 
-	Vector3& operator * (Vector3 val)
+	Vector3 operator * (const Vector3& val)const
 	{
-		this->x *= val.x;
-		this->y *= val.y;
-		this->z *= val.z;
-		return *this;
+		Vector3 returnVal{ this->x * val.x,this->y * val.y ,this->z * val.z };
+		return returnVal;
 	}
 
-	Vector3& operator / (Vector3 val)
+	Vector3 operator / (const Vector3& val)const
 	{
-		this->x /= val.x;
-		this->y /= val.y;
-		this->z /= val.z;
-		return *this;
+		Vector3 returnVal{ this->x / val.x,this->y / val.y ,this->z / val.z };
+		return returnVal;
 	}
-
 };
 
 //ベクトルの長さを返す関数(Vector2用)

@@ -5,8 +5,6 @@
 #include"Enemy/Enemy.h"
 void ObjControl::Update()
 {	
-	//for (auto* obj : objects)
-	//for (auto itr = objects.begin(), itr_end = objects.end(); itr != itr_end;++itr)
 	for (int i = 0; i < objects.size(); ++i)
 	{
 		objects[i]->Update();
@@ -26,12 +24,6 @@ void ObjControl::Update()
 }
 void ObjControl::Draw()
 {
-	//for (auto* obj : objects)
-	////for (auto itr = objects.begin(), itr_end = objects.end(); itr != itr_end; ++itr)
-
-	//{
-	//	obj->Draw();
-	//}
 	for (int i = 0; i < objects.size(); ++i)
 	{
 		objects[i]->Draw();
@@ -40,55 +32,17 @@ void ObjControl::Draw()
 }
 void ObjControl::CollisionUpdate()
 {
-	//for (auto itr1 = objects.begin(), itr_end = objects.end(); itr1 != objects.end();)
-	//{
-	//	for (auto itr2 = objects.begin(), itr_end = objects.end(); itr2 != objects.end();)
-	//	{
-	//		if (collision.Judge(*(*itr1)->GetCollider(), *(*itr2)->GetCollider()))
-	//		{
-	//			if (itr1 != itr2 && (*itr1)->GetUsingFlag() && (*itr2)->GetUsingFlag())
-	//			{
-	//				(*itr1)->OnCollision((*itr2));
-	//			}
-	//			/*if (itr1 == itr2)
-	//			{
-	//				return;
-	//			}
-	//			if (!(*itr1)->GetUsingFlag() || !(*itr2)->GetUsingFlag())
-	//			{
-	//				return;
-	//			}
-	//			(*itr1)->OnCollision(*itr2);*/
-	//		}
-	//	}
-	//}
-
 	for (auto* obj1 : objects)
 	{
 		for (auto* obj2 : objects)
 		{
-			/*
-				usingflag‚Ì—L–³‚ð‚«‚¢‚Ä‚µ‚Ü‚¤‚Æobjects“à‚Ì‚ ‚Æ‚Ì‚à‚Ì‚ª“–‚½‚Á‚½Žž‚Ìˆ—‚ðs‚í‚È‚­‚È‚é
-			*/
-			//if (obj1 != obj2 && obj1->GetUsingFlag() && obj2->GetUsingFlag())
 			if (obj1 == obj2)
 			{
 				continue;
 			}
 			if (collision.Judge(*obj1->GetCollider(), *obj2->GetCollider()))
 			{
-
 				obj1->OnCollision(obj2);
-
-				/*if (obj1 == obj2)
-				{
-					break;
-				}
-				if (!obj1->GetUsingFlag() || !obj2->GetUsingFlag())
-				{
-					return;
-				}*/
-
 			}
 			
 		}
@@ -96,7 +50,7 @@ void ObjControl::CollisionUpdate()
 }
 void ObjControl::CreateBackGround()
 {
-	objects.push_back(new BackGround(0, 0));
+	objects.push_back(new BackGround());
 }
 void ObjControl::CreatePlayer(float posX_, float posY_)
 {

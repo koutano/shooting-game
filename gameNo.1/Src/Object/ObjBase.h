@@ -1,7 +1,10 @@
 #pragma once
 #include<string>
 #include"../Collision/Collider.h"
-enum ObjGroup
+/*
+オブジェクトグループ選別用
+*/
+enum class ObjGroup
 {
 	Group_Non = -1,
 	Group_Player,
@@ -24,7 +27,7 @@ public:
 		posY(posY_),
 		usingFlag(true),
 		textureKeyword(""),
-		group(Group_Non)
+		group(ObjGroup::Group_Non)
 		//colType(Collider_Non)
 	{
 	}
@@ -37,7 +40,7 @@ public:
 		posY(posY_),
 		usingFlag(true),
 		textureKeyword(keyword_),
-		group(Group_Non)
+		group(ObjGroup::Group_Non)
 		//colType(Collider_Non)
 	{
 	}

@@ -1,4 +1,4 @@
-#include <DxLib.h>
+ #include <DxLib.h>
 #include "TextureManager.h"
 
 bool TextureManager::Load(std::string keyword, std::string file_name)

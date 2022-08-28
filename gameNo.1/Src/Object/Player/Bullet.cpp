@@ -23,7 +23,7 @@ void Bullet::Draw()
 
 void Bullet::OnCollision(ObjBase* obj_)
 {
-	if (obj_->GetObjGroup() == Group_Enemy)
+	if (obj_->GetObjGroup() == ObjGroup::Group_Enemy)
 	{
 		usingFlag = false;
 	}

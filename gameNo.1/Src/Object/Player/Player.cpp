@@ -29,7 +29,7 @@ void Player::Update()
 	//‹…‚¾‚µ‚Ü‚·
 	if (KeyboardController::Instance()->IsPushed(KEY_INPUT_P))
 	{
-		ObjControl::Instance()->CreateBullet(posX, posY);
+		//ObjControl::Instance()->CreateBullet(posX, posY);
 	} 
 	
 	colType->UpdatePos(posX, posY);
@@ -47,7 +47,7 @@ void Player::Draw()
 
 void Player::OnCollision(ObjBase* obj_)
 {
-	if (obj_->GetObjGroup() == Group_Enemy)
+	if (obj_->GetObjGroup() == ObjGroup::Group_Enemy)
 	{
 		usingFlag = false;
 	}
