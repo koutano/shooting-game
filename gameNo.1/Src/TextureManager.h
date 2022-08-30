@@ -44,8 +44,6 @@ public:
 private:
 	TextureManager()
 	{}
-	//TextureManagerÁ‹—p
-	TextureManager(TextureManager* instance) = delete;
 
 private:
 	//‰æ‘œŠi”[—p

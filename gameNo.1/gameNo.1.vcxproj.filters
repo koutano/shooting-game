@@ -49,9 +49,6 @@
     <ClCompile Include="Src\Object\ObjControl.cpp">
       <Filter>ソース ファイル\Object</Filter>
     </ClCompile>
-    <ClCompile Include="Src\Object\Enemy.cpp">
-      <Filter>ソース ファイル\Object\Enemy\Enemy01</Filter>
-    </ClCompile>
     <ClCompile Include="Src\Scene\SceneControl.cpp">
       <Filter>ソース ファイル\Scene</Filter>
     </ClCompile>
@@ -60,6 +57,9 @@
     </ClCompile>
     <ClCompile Include="Src\Scene\SceneGame.cpp">
       <Filter>ソース ファイル\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Object\Enemy\Enemy.cpp">
+      <Filter>ソース ファイル\Object\Enemy\Enemy01</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

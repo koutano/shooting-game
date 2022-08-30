@@ -1,4 +1,20 @@
-﻿  SceneControl.cpp
+﻿  KeyboardController.cpp
+  Main.cpp
+  BackGround.cpp
+C:\Users\kouki\OneDrive\デスクトップ\ゲーム作ってみた\git\shooting-game\gameNo.1\Src\Object\BackGround.cpp(14,25): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\kouki\OneDrive\デスクトップ\ゲーム作ってみた\git\shooting-game\gameNo.1\Src\Object\BackGround.cpp(14,19): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+  Enemy.cpp
+C:\Users\kouki\OneDrive\デスクトップ\ゲーム作ってみた\git\shooting-game\gameNo.1\Src\Object\Enemy\Enemy.cpp(19,19): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\kouki\OneDrive\デスクトップ\ゲーム作ってみた\git\shooting-game\gameNo.1\Src\Object\Enemy\Enemy.cpp(19,13): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+  Bullet.cpp
+C:\Users\kouki\OneDrive\デスクトップ\ゲーム作ってみた\git\shooting-game\gameNo.1\Src\Object\Player\Bullet.cpp(20,20): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\kouki\OneDrive\デスクトップ\ゲーム作ってみた\git\shooting-game\gameNo.1\Src\Object\Player\Bullet.cpp(20,13): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+  Player.cpp
+C:\Users\kouki\OneDrive\デスクトップ\ゲーム作ってみた\git\shooting-game\gameNo.1\Src\Object\Player\Player.cpp(43,19): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+C:\Users\kouki\OneDrive\デスクトップ\ゲーム作ってみた\git\shooting-game\gameNo.1\Src\Object\Player\Player.cpp(43,13): warning C4244: '引数': 'float' から 'int' への変換です。データが失われる可能性があります。
+  SceneControl.cpp
   SceneGame.cpp
+  SceneTitle.cpp
+  TextureManager.cpp
   コードを生成中...
-  gameNo.1.vcxproj -> C:\Users\田上　皓基\OneDrive\デスクトップ\ゲーム作ってみた\DxLib使ってみた\shooting-game\x64\Debug\gameNo.1.exe
+  gameNo.1.vcxproj -> C:\Users\kouki\OneDrive\デスクトップ\ゲーム作ってみた\git\shooting-game\x64\Debug\gameNo.1.exe

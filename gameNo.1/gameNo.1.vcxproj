@@ -23,7 +23,7 @@
     <ClCompile Include="Src\Main.cpp" />
     <ClCompile Include="Src\Mathematics.cpp" />
     <ClCompile Include="Src\Object\BackGround.cpp" />
-    <ClCompile Include="Src\Object\Enemy.cpp" />
+    <ClCompile Include="Src\Object\Enemy\Enemy.cpp" />
     <ClCompile Include="Src\Object\ObjControl.cpp" />
     <ClCompile Include="Src\Object\Player\Bullet.cpp" />
     <ClCompile Include="Src\Object\Player\Player.cpp" />

@@ -21,10 +21,14 @@ private:
 		scene = new SceneTitle;
 	}
 
+	/*
+	* ‚±‚ê‚Ü‚¶‚È‚É
 	SceneControl(SceneControl& instance) = delete;
+	*/
+	
 	~SceneControl()
 	{
-		SceneControl(Instance);
+		delete scene;
 	}
 
 public:

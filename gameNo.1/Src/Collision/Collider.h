@@ -14,7 +14,11 @@ enum ColliderType
 class Collider
 {
 public:
-	Collider() {};
+	Collider():
+	x(0),
+	y(0)
+	{}
+	
 	Collider(float x_, float y_):
 		x(x_),
 		y(y_)

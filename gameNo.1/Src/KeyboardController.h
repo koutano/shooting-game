@@ -34,8 +34,6 @@ private:
 	{
 		memset(KeyStates, false, sizeof(KeyState) * MaxKey);
 	}
-	//消去用
-	KeyboardController(KeyboardController& instance) = delete;
 private:
 	//キーの状態保存用
 	KeyState KeyStates[MaxKey];

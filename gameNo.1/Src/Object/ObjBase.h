@@ -4,18 +4,15 @@
 /*
 オブジェクトグループ選別用
 */
-enum class ObjGroup
+enum class ObjGroup : int
 {
-	Group_Non = -1,
 	Group_Player,
 	Group_Enemy,
 
-	Group_Num
+	Group_Num,
+	Group_Non
 };
-/*
-	ObjBaseにwidthとheightをつけるのはよくない
-	（CircleObjBaseに移行したときに不要になる）
-*/
+
 //オブジェクト基底クラス
 class ObjBase
 {
@@ -27,8 +24,9 @@ public:
 		posY(posY_),
 		usingFlag(true),
 		textureKeyword(""),
-		group(ObjGroup::Group_Non)
+		group(ObjGroup::Group_Non),
 		//colType(Collider_Non)
+		colType(nullptr)
 	{
 	}
 
@@ -40,8 +38,9 @@ public:
 		posY(posY_),
 		usingFlag(true),
 		textureKeyword(keyword_),
-		group(ObjGroup::Group_Non)
+		group(ObjGroup::Group_Non),
 		//colType(Collider_Non)
+		colType(nullptr)
 	{
 	}
 
@@ -50,8 +49,9 @@ public:
 		posY(posY_),
 		usingFlag(true),
 		textureKeyword(""),
-		group(group_)
+		group(group_),
 		//colType(Collider_Non)
+		colType(nullptr)
 	{
 	}
 
@@ -60,11 +60,15 @@ public:
 		posY(posY_),
 		usingFlag(true),
 		textureKeyword(keyword_),
-		group(group_)
+		group(group_),
 		//colType(Collider_Non)
+		colType(nullptr)
 	{
 	}
-	virtual ~ObjBase() {}
+	virtual ~ObjBase() 
+	{
+		delete colType;
+	}
 
 	//オブジェクト更新用
 	virtual void Update() = 0;
@@ -82,7 +86,7 @@ public:
 	virtual void OnCollision(ObjBase* obj_) = 0;
 
 	//ColliderType GetColType() { return colType; }
-	Collider* GetCollider() { return colType; }
+	Collider* GetCollider() { return colType; }const
 
 	ObjGroup GetObjGroup() { return group; }
 protected:
